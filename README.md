@@ -5,8 +5,8 @@ Functional Lens - convenient, powerful, and safe concept for data mutation.
 A good [Talk about Lenses in Swift from Brandon Williams ](https://youtu.be/ofjehH9f-CU) highly recommended.
 
 ## Operators:
-`*` - lenses composition;
-`*~` - set value;
+`*` - lenses composition;  
+`*~` - set value;  
 `|>` - piping.
 
 Example of usage:

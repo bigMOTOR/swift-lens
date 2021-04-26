@@ -48,6 +48,10 @@ public func |> <A, B>(a: A, f: (A)->B) -> B {
   return f(a)
 }
 
+public func |> <A, B>(a: A?, f: (A)->B) -> B? {
+  return a.map(f)
+}
+
 /// Piping operator to get rid of syntax (User.name *~ "Joel")(myUser)
 public func |> <A, B, C>(f1: @escaping (A)->B, f2: @escaping (B)->C) -> (A)->C {
   return { a in f2(f1(a)) }

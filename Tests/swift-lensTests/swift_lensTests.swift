@@ -25,11 +25,18 @@ final class swift_lensTests: XCTestCase {
     user = user |> (User.addressLens * Address.countryLens) *~ "Ukraine"
     XCTAssertEqual(user.address?.country, "Ukraine")
   }
+  
+  func testPipeLensInOptional() {
+    var user: User?
+    user = user |> User.idLens *~ UUID()
+    XCTAssertNil(user)
+  }
     
   static var allTests = [
     ("testSetValueWithLens", testSetValueWithLens),
     ("testSetValueWithLensComposition", testSetValueWithLensComposition),
-    ("testCompositionLensWithOptionalType", testCompositionLensWithOptionalType)
+    ("testCompositionLensWithOptionalType", testCompositionLensWithOptionalType),
+    ("testPipeLensInOptional", testPipeLensInOptional)
   ]
 }
 
